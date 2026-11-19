@@ -851,6 +851,21 @@ html, body {
 .qr-tile span { font-family: var(--font-mono); font-size: 14px; color: var(--gray); letter-spacing: .06em; text-transform: uppercase; }
 
 /* ===========================================================
+   PONENTE · MI RUTA HASTA HOY
+   =========================================================== */
+.me-grid { display: grid; grid-template-columns: 500px 1fr; gap: 40px; height: 100%; }
+.me-card { display: flex; flex-direction: column; justify-content: space-between; padding: 34px 38px; }
+.me-name { font-size: 40px; font-weight: 800; line-height: 1.08; letter-spacing: -.02em; }
+.me-role { font-size: 22px; color: var(--ink-soft); margin-top: 10px; line-height: 1.35; }
+.me-chips { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.me-chips span { font-size: 20px; font-weight: 600; padding: 7px 14px; border-radius: 8px; background: var(--red-soft); color: var(--red); }
+.me-legend { display: flex; gap: 26px; font-family: var(--font-mono); font-size: 16px; letter-spacing: .08em; text-transform: uppercase; color: var(--gray); border-top: 1px dashed var(--line); padding-top: 16px; }
+.me-legend i { display: inline-block; width: 26px; height: 6px; border-radius: 3px; vertical-align: middle; margin-right: 8px; }
+.route-svg { width: 100%; height: 100%; }
+.route-line { stroke-dasharray: 1300; stroke-dashoffset: 1300; transition: stroke-dashoffset 2.2s var(--ease) .5s; }
+.slide.active .route-line { stroke-dashoffset: 0; }
+
+/* ===========================================================
    L11 · ANATOMÍA DEL PROMPT
    =========================================================== */
 .anat-row {
@@ -1034,7 +1049,7 @@ html, body {
                 </div>
             </div>
             <div class="cover-meta reveal" style="--d:4">
-                <div class="mono">Ponente<b>Ing. Jorge Kevin Hernández Lasso</b></div>
+                <div class="mono">Ponente<b>MSc. Jorge Kevin Hernández Lasso</b></div>
                 <div class="mono">Institución<b>Universidad Francisco de Paula Santander</b></div>
             </div>
         </div>
@@ -1188,6 +1203,67 @@ html, body {
         </div>
     </div>
 </section>
+
+<!-- ===========================================================
+     PONENTE · MI RUTA HASTA HOY
+     =========================================================== -->
+<section class="slide" data-sec="Ponente">
+    <img class="chrome-logo" data-logo src="" alt="UFPS">
+    <div class="head">
+        <div class="kicker reveal">Presentación · Mi ruta hasta hoy</div>
+        <h2 class="title reveal" style="--d:1">¿Quién <em>les habla</em>?</h2>
+    </div>
+    <div class="body">
+        <div class="me-grid">
+            <div class="card card--accent me-card reveal-left" style="--d:2">
+                <div>
+                    <div class="me-name">MSc. Jorge Kevin<br>Hernández Lasso</div>
+                    <div class="me-role">Profesor de Análisis de Datos</div>
+                    <div class="me-chips">
+                        <span>Análisis de datos</span><span>Cloud · DevOps</span><span>Minería de datos y Big Data</span><span>Educación mediada por TIC</span><span>IA</span>
+                    </div>
+                </div>
+                <div class="me-legend"><span><i style="background:var(--red)"></i>Formación</span><span><i style="background:#141518"></i>Experiencia</span></div>
+            </div>
+            <svg class="route-svg reveal-scale" style="--d:3" viewBox="0 0 1230 590">
+                <path class="route-line" d="M30 150 H960 Q1090 150 1112 262" fill="none" stroke="#BC0017" stroke-width="12" stroke-linecap="round"/>
+                <path class="route-line" d="M30 450 H960 Q1090 450 1112 338" fill="none" stroke="#141518" stroke-width="12" stroke-linecap="round"/>
+                <g>
+                    <circle cx="150" cy="150" r="17" fill="#fff" stroke="#BC0017" stroke-width="7"/>
+                    <text x="150" y="92" text-anchor="middle" font-family="Poppins" font-size="22" font-weight="700" fill="#141518">Ingeniero de Sistemas</text>
+                    <text x="150" y="118" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#BC0017">UFPS</text>
+                    <circle cx="480" cy="150" r="17" fill="#fff" stroke="#BC0017" stroke-width="7"/>
+                    <text x="480" y="92" text-anchor="middle" font-family="Poppins" font-size="22" font-weight="700" fill="#141518">IA Generativa en Negocios</text>
+                    <text x="480" y="118" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#BC0017">PSU · UNIR</text>
+                    <circle cx="810" cy="150" r="17" fill="#fff" stroke="#BC0017" stroke-width="7"/>
+                    <text x="810" y="92" text-anchor="middle" font-family="Poppins" font-size="22" font-weight="700" fill="#141518">Visual Analytics y Big Data</text>
+                    <text x="810" y="118" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#BC0017">MAESTRÍA · UNIR</text>
+                    <circle cx="100" cy="450" r="17" fill="#fff" stroke="#141518" stroke-width="7"/>
+                    <text x="100" y="496" text-anchor="middle" font-family="Poppins" font-size="22" font-weight="700" fill="#141518">Plataforma BECL</text>
+                    <text x="100" y="522" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#141518">UFPS</text>
+                    <circle cx="290" cy="450" r="17" fill="#fff" stroke="#141518" stroke-width="7"/>
+                    <text x="290" y="392" text-anchor="middle" font-family="Poppins" font-size="22" font-weight="700" fill="#141518">Docente</text>
+                    <text x="290" y="418" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#141518">ANÁLISIS DE DATOS</text>
+                    <circle cx="480" cy="450" r="17" fill="#fff" stroke="#141518" stroke-width="7"/>
+                    <text x="480" y="496" text-anchor="middle" font-family="Poppins" font-size="22" font-weight="700" fill="#141518">Servidores</text>
+                    <text x="480" y="522" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#141518">DPTO. SISTEMAS</text>
+                    <circle cx="670" cy="450" r="17" fill="#fff" stroke="#141518" stroke-width="7"/>
+                    <text x="670" y="392" text-anchor="middle" font-family="Poppins" font-size="22" font-weight="700" fill="#141518">Consultor TIC</text>
+                    <text x="670" y="418" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#141518">NUBE Y SOFTWARE</text>
+                    <circle cx="860" cy="450" r="17" fill="#fff" stroke="#141518" stroke-width="7"/>
+                    <text x="860" y="496" text-anchor="middle" font-family="Poppins" font-size="22" font-weight="700" fill="#141518">Visual Analytics</text>
+                    <text x="860" y="522" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#141518">IMRD</text>
+                </g>
+                <circle cx="1130" cy="300" r="70" fill="rgba(188,0,23,.12)"/>
+                <circle cx="1130" cy="300" r="50" fill="#BC0017"/>
+                <text x="1130" y="309" text-anchor="middle" font-family="JetBrains Mono" font-size="24" font-weight="700" fill="#fff">HOY</text>
+                <text x="1040" y="292" text-anchor="end" font-family="Poppins" font-size="24" font-weight="700" fill="#141518">IA en la</text>
+                <text x="1040" y="324" text-anchor="end" font-family="Poppins" font-size="24" font-weight="700" fill="#BC0017">Industria 5.0</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
 
 <!-- ===========================================================
      L4 · LA CAJA NEGRA (Revelado paso a paso con →)
@@ -1901,7 +1977,7 @@ html, body {
                 </h2>
             </div>
             <div style="display:flex;gap:64px;border-top:1px solid var(--line);padding-top:24px" class="reveal" style="--d:3">
-                <div class="mono">Ponente<b style="display:block;font-family:var(--font-display);font-size:26px;color:var(--ink);text-transform:none;letter-spacing:0;margin-top:4px">Ing. Jorge Kevin Hernández Lasso</b></div>
+                <div class="mono">Ponente<b style="display:block;font-family:var(--font-display);font-size:26px;color:var(--ink);text-transform:none;letter-spacing:0;margin-top:4px">MSc. Jorge Kevin Hernández Lasso</b></div>
                 <div class="mono">Contacto<b style="display:block;font-family:var(--font-display);font-size:26px;color:var(--ink);text-transform:none;letter-spacing:0;margin-top:4px">jorgekevinhl@ufps.edu.co</b></div>
             </div>
         </div>
