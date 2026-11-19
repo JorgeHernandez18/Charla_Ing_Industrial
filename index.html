@@ -702,7 +702,7 @@ html, body {
 }
 
 /* ===========================================================
-   L10 · GEMAS (SIMULADOR INTERACTIVO DE VENTANA DE CONTEXTO)
+   L10 · SKILLS + NOTEBOOKLM (SIMULADOR DE VENTANA DE CONTEXTO)
    =========================================================== */
 .gem-interactive {
     display: grid;
@@ -772,6 +772,83 @@ html, body {
     white-space: nowrap;
     overflow: hidden;
 }
+
+.duo-core { display: flex; flex-direction: column; gap: 22px; }
+.core-box { display: flex; align-items: center; gap: 24px; padding: 24px 28px; }
+.core-box svg { width: 86px; height: 86px; flex: none; }
+.core-box h3 { font-size: 30px; color: var(--red); margin-top: 10px; line-height: 1.1; }
+.core-box p { font-size: 20px; line-height: 1.38; color: var(--ink-soft); margin-top: 6px; }
+
+/* ===========================================================
+   CONCEPTOS BASE · TOKEN / CONTEXTO / MODELO / AGENTE
+   =========================================================== */
+.base-grid { display: grid; grid-template-columns: 1fr 560px; gap: 36px; height: 100%; }
+.base-stack { display: flex; flex-direction: column; gap: 20px; height: 100%; }
+.base-stack .card { flex: 1; padding: 26px 32px; display: flex; flex-direction: column; justify-content: center; }
+.base-stack .card h3 { font-size: 30px; }
+.base-stack .card p { font-size: 22px; margin-top: 8px; }
+.tok-row { display: flex; flex-wrap: wrap; gap: 18px 6px; margin-top: 26px; }
+.tok { display: inline-flex; flex-direction: column; align-items: center; gap: 10px; }
+.tok b { font-weight: 600; font-size: 44px; padding: 10px 14px; border-radius: 10px; background: var(--red-soft); color: var(--ink); white-space: pre; border: 1.5px solid rgba(188,0,23,.18); }
+.tok:nth-child(even) b { background: var(--surface-alt); border-color: var(--line); }
+.tok span { font-family: var(--font-mono); font-size: 16px; color: var(--gray); }
+.tok-sum { display: flex; gap: 40px; align-items: baseline; margin-top: 34px; padding-top: 24px; border-top: 1px dashed var(--line); }
+.tok-sum b { white-space: nowrap; font-size: 56px; font-weight: 800; color: var(--red); letter-spacing: -.03em; }
+.tok-sum span { font-size: 24px; color: var(--ink-soft); }
+.ctx-big { height: 86px; margin-top: 16px; }
+.ctx-big .ctx-seg { font-size: 20px; }
+.ctx-scale { display: flex; justify-content: space-between; margin-top: 10px; font-family: var(--font-mono); font-size: 16px; color: var(--gray); }
+.three-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 40px; }
+.three-grid .card { padding: 40px 38px; min-height: 270px; }
+.three-grid .card h3 { font-size: 32px; margin-top: 14px; }
+.three-grid .card p { font-size: 23px; margin-top: 10px; }
+.pred { display: flex; flex-direction: column; gap: 16px; height: 100%; }
+.pred-in { font-size: 34px; font-weight: 600; color: var(--ink); line-height: 1.25; }
+.pred-in i { font-style: normal; color: var(--red); border-bottom: 4px solid var(--red); padding: 0 18px; }
+.pred-model { display: flex; align-items: center; gap: 22px; padding: 18px 24px; border: 2px dashed var(--red); border-radius: 14px; background: #FFF5F5; }
+.pred-model svg { width: 120px; height: 66px; flex: none; }
+.pred-model b { font-size: 26px; color: var(--red); display: block; }
+.pred-model span { font-size: 19px; color: var(--ink-soft); }
+.pbar { display: grid; grid-template-columns: 290px 1fr 64px; gap: 16px; align-items: center; font-size: 22px; }
+.pbar .trk { height: 26px; background: var(--surface-alt); border-radius: 6px; overflow: hidden; }
+.pbar .trk div { height: 100%; background: var(--gray); border-radius: 6px; }
+.pbar.top .trk div { background: var(--red); }
+.pbar.top { font-weight: 700; color: var(--red); }
+.pbar em { font-style: normal; font-family: var(--font-mono); font-size: 19px; text-align: right; }
+.agent-grid { display: grid; grid-template-columns: 600px 1fr; gap: 40px; height: 100%; }
+.agent-grid .card { padding: 30px 36px; }
+.agent-grid .card h3 { font-size: 34px; margin-top: 8px; }
+.agent-grid .card p { font-size: 23px; margin-top: 8px; }
+.agent-svg { width: 100%; height: 100%; }
+
+/* ===========================================================
+   VIDEO NOTEBOOKLM
+   =========================================================== */
+.video-grid { display: grid; grid-template-columns: 1010px 1fr; gap: 44px; height: 100%; align-items: center; }
+.video-frame { position: relative; width: 1010px; height: 568px; border-radius: 18px; overflow: hidden; background: #141518; box-shadow: 0 24px 60px rgba(20,21,24,.18); border: 2px solid var(--red); }
+.video-frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000; display: none; }
+.video-frame.has-file video { display: block; }
+.video-frame.has-file .video-link { display: none; }
+.video-link { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; text-decoration: none; color: #fff;
+  background: radial-gradient(circle at 30% 20%, rgba(210,23,26,.35), transparent 55%), repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 40px), repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 40px), #141518; }
+.video-play { width: 150px; height: 150px; border-radius: 50%; background: var(--red); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 18px rgba(188,0,23,.18); transition: transform .25s var(--ease); }
+.video-link:hover .video-play { transform: scale(1.08); }
+.video-play svg { width: 62px; height: 62px; margin-left: 10px; }
+.video-link b { font-size: 36px; font-weight: 700; }
+.video-link span { font-family: var(--font-mono); font-size: 18px; letter-spacing: .1em; color: #9CA3AF; text-transform: uppercase; }
+
+.prompt-cmp { display: grid; grid-template-rows: 1fr 1fr; gap: 22px; height: 100%; }
+.prompt-cmp .card { padding: 26px 34px; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+.bubble { font-size: 27px; font-weight: 500; line-height: 1.35; color: var(--ink); background: var(--surface-alt); border-radius: 18px 18px 18px 4px; padding: 16px 22px; }
+.bubble--hot { background: #FFF5F5; border: 1.5px solid rgba(188,0,23,.25); font-size: 23px; }
+.bubble--hot b { color: var(--red); font-family: var(--font-mono); font-size: 18px; margin-right: 8px; }
+.verdict { font-family: var(--font-mono); font-size: 18px; letter-spacing: .08em; text-transform: uppercase; }
+.close-qrs { display: flex; gap: 28px; margin-top: 40px; }
+.qr-tile { background: #fff; border-radius: 16px; padding: 18px 18px 14px; width: 250px; text-align: center; color: var(--ink); box-shadow: 0 16px 40px rgba(0,0,0,.18); }
+.qr-tile .qr-svg, .qr-tile .qr-ph { width: 214px; height: 214px; display: block; }
+.qr-ph { border: 2px dashed var(--gray); border-radius: 8px; display: flex !important; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 15px; color: var(--gray); padding: 16px; }
+.qr-tile b { display: block; font-size: 22px; margin-top: 10px; }
+.qr-tile span { font-family: var(--font-mono); font-size: 14px; color: var(--gray); letter-spacing: .06em; text-transform: uppercase; }
 
 /* ===========================================================
    L11 · ANATOMÍA DEL PROMPT
@@ -894,9 +971,10 @@ html, body {
    =========================================================== */
 .close-layout {
     display: grid;
-    grid-template-columns: 1fr 560px;
+    grid-template-columns: 1fr 700px;
     height: 100%;
 }
+.close-left .cover-logo { display: block; }
 .close-left {
     padding: 72px 64px 72px var(--pad-x);
     display: flex;
@@ -995,7 +1073,7 @@ html, body {
 
                     <!-- Motor IA / Gemas -->
                     <rect x="30" y="255" width="500" height="165" rx="12" fill="#F7F8FA" stroke="#7C8089" stroke-width="2" stroke-dasharray="6 4"/>
-                    <text x="50" y="286" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#4A4D55">[COMPONENTE] ECOSISTEMA IA &amp; GEMAS</text>
+                    <text x="50" y="286" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#4A4D55">[COMPONENTE] ECOSISTEMA IA &amp; SKILLS</text>
                     <rect x="55" y="305" width="140" height="90" rx="8" fill="#fff" stroke="#D0D5DD" stroke-width="1.5"/>
                     <text x="125" y="346" text-anchor="middle" font-family="Poppins" font-size="16" font-weight="600" fill="#141518">Microcurrículo</text>
                     <text x="125" y="368" text-anchor="middle" font-family="Poppins" font-size="13" fill="#7C8089">RA &amp; Sílabos</text>
@@ -1005,8 +1083,8 @@ html, body {
                     <text x="280" y="368" text-anchor="middle" font-family="Poppins" font-size="13" fill="#7C8089">Casos &amp; Slides</text>
 
                     <rect x="365" y="305" width="140" height="90" rx="8" fill="#fff" stroke="#D0D5DD" stroke-width="1.5"/>
-                    <text x="435" y="346" text-anchor="middle" font-family="Poppins" font-size="16" font-weight="600" fill="#141518">Gemas Cátedra</text>
-                    <text x="435" y="368" text-anchor="middle" font-family="Poppins" font-size="13" fill="#7C8089">Memoria propia</text>
+                    <text x="435" y="346" text-anchor="middle" font-family="Poppins" font-size="16" font-weight="600" fill="#141518">Skills Cátedra</text>
+                    <text x="435" y="368" text-anchor="middle" font-family="Poppins" font-size="13" fill="#7C8089">+ NotebookLM</text>
 
                     <!-- Flechas hacia Impacto Regional -->
                     <line x1="280" y1="420" x2="280" y2="490" stroke="#BC0017" stroke-width="2.5" marker-end="url(#arr-red)"/>
@@ -1146,6 +1224,189 @@ html, body {
         <p><b>Esta conferencia no se trata de programar esta fundamentación.</b>Muchas personas ya trabajaron en ello para facilitarnos la ruta; nosotros debemos enfocarnos en diseñar excelentes prompts.</p>
     </div>
 </section>
+
+<!-- ===========================================================
+     CONCEPTOS BASE 01 · TOKEN
+     =========================================================== -->
+<section class="slide" data-sec="Conceptos base">
+    <img class="chrome-logo" data-logo src="" alt="UFPS">
+    <div class="head">
+        <div class="kicker reveal">Conceptos base 01 · La unidad de la IA</div>
+        <h2 class="title reveal" style="--d:1">¿Qué es un <em>token</em>?</h2>
+    </div>
+    <div class="body">
+        <div class="base-grid">
+            <div class="card">
+                <span class="mono">Así “lee” la IA una frase: fragmentos con un número</span>
+                <div class="tok-row">
+                    <div class="tok reveal" style="--d:2.00"><b>La</b><span>4021</span></div>
+                    <div class="tok reveal" style="--d:2.35"><b>&nbsp;cadena</b><span>31877</span></div>
+                    <div class="tok reveal" style="--d:2.70"><b>&nbsp;de</b><span>409</span></div>
+                    <div class="tok reveal" style="--d:3.05"><b>&nbsp;sumin</b><span>58212</span></div>
+                    <div class="tok reveal" style="--d:3.40"><b>istro</b><span>7430</span></div>
+                    <div class="tok reveal" style="--d:3.75"><b>&nbsp;en</b><span>304</span></div>
+                    <div class="tok reveal" style="--d:4.10"><b>&nbsp;Cúcuta</b><span>91205</span></div>
+                    <div class="tok reveal" style="--d:4.45"><b>&nbsp;se</b><span>513</span></div>
+                    <div class="tok reveal" style="--d:4.80"><b>&nbsp;optim</b><span>44190</span></div>
+                    <div class="tok reveal" style="--d:5.15"><b>iza</b><span>2853</span></div>
+                    <div class="tok reveal" style="--d:5.50"><b>.</b><span>13</span></div>
+                </div>
+                <div class="tok-sum reveal" style="--d:6">
+                    <b>8 palabras = 11 tokens</b>
+                    <span>La IA no ve letras ni palabras: ve números.</span>
+                </div>
+            </div>
+            <div class="base-stack">
+                <div class="card card--accent reveal" style="--d:2"><h3>Se cobra en tokens</h3><p>El uso de la IA se factura por millones de tokens.</p></div>
+                <div class="card card--accent reveal" style="--d:3"><h3>Se limita en tokens</h3><p>Cada modelo tiene un máximo que puede leer y escribir.</p></div>
+                <div class="card card--hot reveal" style="--d:4"><h3 style="color:var(--red)">Regla práctica</h3><p>100 palabras en español ≈ 130–150 tokens.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===========================================================
+     CONCEPTOS BASE 02 · VENTANA DE CONTEXTO
+     =========================================================== -->
+<section class="slide" data-sec="Conceptos base">
+    <img class="chrome-logo" data-logo src="" alt="UFPS">
+    <div class="head">
+        <div class="kicker reveal">Conceptos base 02 · La memoria de trabajo</div>
+        <h2 class="title reveal" style="--d:1">¿Qué es la <em>ventana de contexto</em>?</h2>
+    </div>
+    <div class="body">
+        <div class="ctx-panel reveal" style="--d:2;margin-top:0">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+                <b style="font-size:26px">Todo lo que la IA “ve” al mismo tiempo</b>
+                <span class="mono" style="color:var(--red);font-weight:700">medido en tokens</span>
+            </div>
+            <div class="ctx-bar ctx-big">
+                <div class="ctx-seg" style="width:12%;background:#141518">Instrucciones</div>
+                <div class="ctx-seg" style="width:34%;background:var(--red)">Documentos</div>
+                <div class="ctx-seg" style="width:28%;background:#7C8089">Conversación</div>
+                <div class="ctx-seg" style="width:14%;background:#A71C19">Respuesta</div>
+                <div class="ctx-seg" style="flex:1;background:transparent;color:var(--gray)">Libre</div>
+            </div>
+            <div class="ctx-scale"><span>0 TOKENS</span><span>LÍMITE DEL MODELO →</span></div>
+        </div>
+        <div class="three-grid">
+            <div class="card reveal" style="--d:3"><span class="badge-num">01</span><h3>Es la mesa de trabajo</h3><p>No es el archivo de la oficina: solo lo que está sobre la mesa ahora.</p></div>
+            <div class="card reveal" style="--d:4"><span class="badge-num">02</span><h3>Tiene un límite</h3><p>Hoy cabe desde un libro hasta varios, según el modelo.</p></div>
+            <div class="card card--hot reveal" style="--d:5"><span class="badge-num" style="background:var(--red);color:#fff">03</span><h3 style="color:var(--red)">Si se llena, olvida</h3><p>Lo más antiguo pierde peso. Un tema por chat.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===========================================================
+     CONCEPTOS BASE 03 · MODELO
+     =========================================================== -->
+<section class="slide" data-sec="Conceptos base">
+    <img class="chrome-logo" data-logo src="" alt="UFPS">
+    <div class="head">
+        <div class="kicker reveal">Conceptos base 03 · El motor</div>
+        <h2 class="title reveal" style="--d:1">¿Qué es un <em>modelo</em>?</h2>
+    </div>
+    <div class="body">
+        <div class="base-grid">
+            <div class="card pred">
+                <span class="mono">Entrada</span>
+                <div class="pred-in reveal" style="--d:2">“El cuello de botella de la línea está en la <i>&nbsp;?&nbsp;</i>”</div>
+                <div class="pred-model reveal-scale" style="--d:3">
+                    <svg viewBox="0 0 120 66"><g stroke="#BC0017" stroke-width="1.4" opacity=".55"><line x1="12" y1="12" x2="60" y2="8"/><line x1="12" y1="12" x2="60" y2="33"/><line x1="12" y1="12" x2="60" y2="58"/><line x1="12" y1="54" x2="60" y2="8"/><line x1="12" y1="54" x2="60" y2="33"/><line x1="12" y1="54" x2="60" y2="58"/><line x1="60" y1="8" x2="108" y2="33"/><line x1="60" y1="33" x2="108" y2="33"/><line x1="60" y1="58" x2="108" y2="33"/></g><g fill="#BC0017"><circle cx="12" cy="12" r="6"/><circle cx="12" cy="54" r="6"/><circle cx="60" cy="8" r="6"/><circle cx="60" cy="33" r="6"/><circle cx="60" cy="58" r="6"/><circle cx="108" cy="33" r="7"/></g></svg>
+                    <div><b>Modelo de lenguaje</b><span>Red neuronal entrenada con billones de tokens</span></div>
+                </div>
+                <span class="mono" style="margin-top:4px">Salida: probabilidad del siguiente token</span>
+                <div class="pbar top reveal" style="--d:4"><span>estación de empaque</span><div class="trk"><div style="width:61%"></div></div><em>61%</em></div>
+                <div class="pbar reveal" style="--d:4.4"><span>máquina 3</span><div class="trk"><div style="width:22%"></div></div><em>22%</em></div>
+                <div class="pbar reveal" style="--d:4.8"><span>bodega</span><div class="trk"><div style="width:9%"></div></div><em>9%</em></div>
+            </div>
+            <div class="base-stack">
+                <div class="card card--accent reveal" style="--d:2"><h3>Predice, no consulta</h3><p>Elige el siguiente token más probable, uno a la vez.</p></div>
+                <div class="card card--accent reveal" style="--d:3"><h3>Aprendió patrones</h3><p>No memorizó hechos: por eso puede alucinar.</p></div>
+                <div class="card card--hot reveal" style="--d:4"><h3 style="color:var(--red)">Hay muchos</h3><p>GPT, Gemini, Claude, Llama… distinto tamaño, costo y fortaleza.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===========================================================
+     CONCEPTOS BASE 04 · PROMPT
+     =========================================================== -->
+<section class="slide" data-sec="Conceptos base">
+    <img class="chrome-logo" data-logo src="" alt="UFPS">
+    <div class="head">
+        <div class="kicker reveal">Conceptos base 04 · La instrucción</div>
+        <h2 class="title reveal" style="--d:1">¿Qué es un <em>prompt</em>?</h2>
+    </div>
+    <div class="body">
+        <div class="base-grid">
+            <div class="prompt-cmp">
+                <div class="card reveal-left" style="--d:2">
+                    <span class="mono">Prompt vago</span>
+                    <div class="bubble">“Hazme un taller de transporte.”</div>
+                    <span class="verdict" style="color:var(--gray)">→ Resultado genérico, sin contexto, sin rúbrica</span>
+                </div>
+                <div class="card card--hot reveal-left" style="--d:3">
+                    <span class="mono" style="color:var(--red)">Prompt diseñado</span>
+                    <div class="bubble bubble--hot"><b>ROL</b>Profesor de Investigación de Operaciones · <b>CONTEXTO</b>6.º semestre, distribuidora en Cúcuta · <b>ENTREGABLE</b>taller con tabla de costos y rúbrica · <b>RIGOR</b>factible en Solver, máx. 2 pág.</div>
+                    <span class="verdict" style="color:var(--red);font-weight:700">→ Resultado útil para tu clase</span>
+                </div>
+            </div>
+            <div class="base-stack">
+                <div class="card card--accent reveal" style="--d:2"><h3>Es la entrada del modelo</h3><p>La instrucción en lenguaje natural que le das a la IA.</p></div>
+                <div class="card card--accent reveal" style="--d:3"><h3>Entrada clara, salida útil</h3><p>La calidad del resultado depende de lo que pides.</p></div>
+                <div class="card card--hot reveal" style="--d:4"><h3 style="color:var(--red)">Se diseña e itera</h3><p>Como un proceso: se prueba, se mide y se mejora.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===========================================================
+     CONCEPTOS BASE 05 · AGENTE
+     =========================================================== -->
+<section class="slide" data-sec="Conceptos base">
+    <img class="chrome-logo" data-logo src="" alt="UFPS">
+    <div class="head">
+        <div class="kicker reveal">Conceptos base 05 · De conversar a actuar</div>
+        <h2 class="title reveal" style="--d:1">¿Qué es un <em>agente</em>?</h2>
+    </div>
+    <div class="body">
+        <div class="agent-grid">
+            <div style="display:flex;flex-direction:column;gap:24px;justify-content:center">
+                <div class="card reveal-left" style="--d:2"><span class="mono">Chat</span><h3>Responde</h3><p>Tú preguntas, la IA contesta. Tú ejecutas el resto.</p></div>
+                <div class="card card--hot reveal-left" style="--d:3"><span class="mono" style="color:var(--red)">Agente</span><h3 style="color:var(--red)">Actúa</h3><p>Le das un objetivo: planifica, usa herramientas, revisa y entrega.</p></div>
+            </div>
+            <svg class="agent-svg reveal-scale" style="--d:4" viewBox="0 0 1120 590">
+                <defs><marker id="arr-ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#BC0017"/></marker></defs>
+                <rect x="250" y="2" width="620" height="58" rx="10" fill="#141518"/>
+                <text x="560" y="40" text-anchor="middle" font-family="Poppins" font-size="22" font-weight="600" fill="#fff">Objetivo: programar la producción semanal</text>
+                <line x1="560" y1="60" x2="560" y2="98" stroke="#BC0017" stroke-width="3" marker-end="url(#arr-ag)"/>
+                <ellipse cx="560" cy="295" rx="290" ry="160" fill="none" stroke="#E2E5EC" stroke-width="2" stroke-dasharray="8 6"/>
+                <path d="M 680 140 A 290 160 0 0 1 820 230" fill="none" stroke="#BC0017" stroke-width="3" marker-end="url(#arr-ag)"/>
+                <path d="M 820 360 A 290 160 0 0 1 680 450" fill="none" stroke="#BC0017" stroke-width="3" marker-end="url(#arr-ag)"/>
+                <path d="M 440 450 A 290 160 0 0 1 300 360" fill="none" stroke="#BC0017" stroke-width="3" marker-end="url(#arr-ag)"/>
+                <path d="M 300 230 A 290 160 0 0 1 440 140" fill="none" stroke="#BC0017" stroke-width="3" marker-end="url(#arr-ag)"/>
+                <circle cx="560" cy="295" r="78" fill="#FFF5F5" stroke="#BC0017" stroke-width="3"/>
+                <text x="560" y="290" text-anchor="middle" font-family="JetBrains Mono" font-size="20" font-weight="700" fill="#BC0017">MODELO</text>
+                <text x="560" y="318" text-anchor="middle" font-family="Poppins" font-size="16" fill="#4A4D55">razona</text>
+                <g font-family="Poppins" text-anchor="middle">
+                    <rect x="460" y="100" width="200" height="84" rx="12" fill="#fff" stroke="#BC0017" stroke-width="2.5"/>
+                    <text x="560" y="136" font-size="24" font-weight="700" fill="#141518">1 · Planifica</text><text x="560" y="164" font-size="18" fill="#7C8089">Divide la tarea</text>
+                    <rect x="820" y="253" width="220" height="84" rx="12" fill="#fff" stroke="#BC0017" stroke-width="2.5"/>
+                    <text x="930" y="289" font-size="24" font-weight="700" fill="#141518">2 · Actúa</text><text x="930" y="317" font-size="18" fill="#7C8089">Excel · Solver · Web</text>
+                    <rect x="460" y="406" width="200" height="84" rx="12" fill="#fff" stroke="#BC0017" stroke-width="2.5"/>
+                    <text x="560" y="442" font-size="24" font-weight="700" fill="#141518">3 · Observa</text><text x="560" y="470" font-size="18" fill="#7C8089">Lee resultados</text>
+                    <rect x="80" y="253" width="220" height="84" rx="12" fill="#fff" stroke="#BC0017" stroke-width="2.5"/>
+                    <text x="190" y="289" font-size="24" font-weight="700" fill="#141518">4 · Ajusta</text><text x="190" y="317" font-size="18" fill="#7C8089">Corrige y repite</text>
+                </g>
+                <line x1="560" y1="490" x2="560" y2="528" stroke="#BC0017" stroke-width="3" marker-end="url(#arr-ag)"/>
+                <rect x="360" y="530" width="400" height="58" rx="10" fill="#BC0017"/>
+                <text x="560" y="568" text-anchor="middle" font-family="Poppins" font-size="22" font-weight="600" fill="#fff">Entregable + informe</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
 
 <!-- ===========================================================
      L5 · EL PUENTE HACIA LA INDUSTRIA 5.0
@@ -1421,17 +1682,17 @@ html, body {
 <!-- ===========================================================
      L10 · GEMAS Y VENTANA DE CONTEXTO (SIMULADOR INTERACTIVO)
      =========================================================== -->
-<section class="slide" data-sec="Aplicación 04 · Gems">
+<section class="slide" data-sec="Aplicación 04 · Skills">
     <img class="chrome-logo" data-logo src="" alt="UFPS">
     <div class="head">
         <div class="kicker reveal">Aplicación docente 04 · Memoria persistente</div>
-        <h2 class="title reveal" style="--d:1">Una <em>Gema</em>: tu asistente de cátedra entrenado</h2>
+        <h2 class="title reveal" style="--d:1"><em>Skills</em> + <em>NotebookLM</em>: tu cátedra, siempre lista</h2>
     </div>
     <div class="body">
         <div class="gem-interactive">
             <!-- Documentos clicables -->
             <div style="display:flex;flex-direction:column;gap:18px" class="reveal-left" style="--d:2">
-                <span class="mono" style="font-size:17px">Haz clic para cargar contexto a la Gema:</span>
+                <span class="mono" style="font-size:17px">Haz clic para cargar fuentes a NotebookLM:</span>
                 <button class="doc-btn loaded" data-doc="micro" data-pct="28" type="button">
                     <div><b style="font-size:24px;display:block">Microcurrículo Oficial</b><span style="font-size:18px;color:var(--ink-soft)">Contenidos, RA y bibliografía</span></div>
                     <span class="doc-status">CARGADO</span>
@@ -1446,23 +1707,23 @@ html, body {
                 </button>
             </div>
 
-            <!-- Núcleo de la Gema -->
-            <div class="uml-box reveal-scale" style="--d:3;text-align:center;border-color:var(--red);background:#FFF5F5">
-                <span class="uml-tag">GEM / ASISTENTE PERSONALIZADO</span>
-                <svg viewBox="0 0 120 120" style="width:110px;height:110px;margin:14px auto;display:block">
-                    <polygon points="35,15 85,15 110,45 60,105 10,45" fill="rgba(188,0,23,.15)" stroke="#BC0017" stroke-width="4"/>
-                    <polyline points="10,45 110,45" fill="none" stroke="#BC0017" stroke-width="2.5"/>
-                    <polyline points="35,15 48,45 60,105 72,45 85,15" fill="none" stroke="#BC0017" stroke-width="2.5"/>
-                </svg>
-                <h3 style="font-size:34px;color:var(--red)">Gema de Asignatura</h3>
-                <p style="font-size:21px;margin-top:8px">No vuelves a explicar tu materia desde cero en cada chat.</p>
+            <!-- Núcleo: Skill + NotebookLM -->
+            <div class="duo-core">
+                <div class="uml-box core-box reveal-scale" style="--d:3">
+                    <svg viewBox="0 0 120 120"><rect x="18" y="14" width="84" height="92" rx="10" fill="rgba(188,0,23,.10)" stroke="#BC0017" stroke-width="4"/><polyline points="38,44 50,56 38,68" fill="none" stroke="#BC0017" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><line x1="58" y1="70" x2="82" y2="70" stroke="#BC0017" stroke-width="5" stroke-linecap="round"/><line x1="36" y1="88" x2="84" y2="88" stroke="#BC0017" stroke-width="3" opacity=".5"/></svg>
+                    <div><span class="uml-tag">SKILL · CÓMO TRABAJAS</span><h3>Skill de Asignatura</h3><p>Tus instrucciones, formatos y rúbricas empaquetados. La IA los aplica cuando la tarea lo pide.</p></div>
+                </div>
+                <div class="uml-box core-box reveal-scale" style="--d:4;border-color:var(--red);background:#FFF5F5">
+                    <svg viewBox="0 0 120 120"><path d="M60 26 C46 16 26 16 14 20 V96 C26 92 46 92 60 102 C74 92 94 92 106 96 V20 C94 16 74 16 60 26 Z" fill="rgba(188,0,23,.12)" stroke="#BC0017" stroke-width="4" stroke-linejoin="round"/><line x1="60" y1="26" x2="60" y2="102" stroke="#BC0017" stroke-width="3"/><line x1="26" y1="42" x2="48" y2="46" stroke="#BC0017" stroke-width="3" opacity=".55"/><line x1="26" y1="58" x2="48" y2="62" stroke="#BC0017" stroke-width="3" opacity=".55"/><line x1="72" y1="46" x2="94" y2="42" stroke="#BC0017" stroke-width="3" opacity=".55"/><line x1="72" y1="62" x2="94" y2="58" stroke="#BC0017" stroke-width="3" opacity=".55"/></svg>
+                    <div><span class="uml-tag">NOTEBOOKLM · QUÉ SABES</span><h3>Cuaderno de Fuentes</h3><p>Responde y cita solo desde tus documentos: guías, resúmenes y audios de repaso.</p></div>
+                </div>
             </div>
 
             <!-- Salida -->
-            <div class="card card--hot reveal" style="--d:4">
+            <div class="card card--hot reveal" style="--d:5">
                 <span class="mono" style="color:var(--red)">Resultado en el aula</span>
                 <h3 style="margin-top:10px;font-size:32px">Coherencia total en cada sesión</h3>
-                <p style="margin-top:12px;font-size:23px">Genera talleres, exámenes y retroalimentación alineados exactamente con <b style="color:var(--ink)">tus documentos</b>.</p>
+                <p style="margin-top:12px;font-size:23px">La Skill define <b style="color:var(--ink)">cómo</b> lo haces; NotebookLM aporta <b style="color:var(--ink)">qué dicen tus documentos</b>. Talleres, exámenes y retroalimentación alineados.</p>
             </div>
         </div>
 
@@ -1473,13 +1734,44 @@ html, body {
                 <span class="mono" id="ctxTotal" style="color:var(--red);font-weight:700">43% ocupada</span>
             </div>
             <div class="ctx-bar">
-                <div class="ctx-seg" style="width:15%;background:#141518">Rol Base (15%)</div>
-                <div class="ctx-seg" id="ctxDocs" style="width:28%;background:var(--red)">Documentos (28%)</div>
+                <div class="ctx-seg" style="width:15%;background:#141518">Skill (15%)</div>
+                <div class="ctx-seg" id="ctxDocs" style="width:28%;background:var(--red)">Fuentes (28%)</div>
                 <div class="ctx-seg" style="flex:1;background:transparent;color:var(--gray)">Espacio libre para tu consulta en clase</div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- ===========================================================
+     VIDEO · CREADO CON NOTEBOOKLM
+     Si existe Assets/video-notebooklm.mp4 se reproduce aquí mismo;
+     si no, el botón abre el video en NotebookLM (pestaña nueva).
+     =========================================================== -->
+<section class="slide" data-sec="Video NotebookLM">
+    <img class="chrome-logo" data-logo src="" alt="UFPS">
+    <div class="head">
+        <div class="kicker reveal">Aplicación en vivo · Hecho con NotebookLM</div>
+        <h2 class="title reveal" style="--d:1">Esta charla, <em>explicada por la IA</em></h2>
+    </div>
+    <div class="body">
+        <div class="video-grid">
+            <div class="video-frame reveal-scale" id="nbVideoFrame" style="--d:2">
+                <video id="nbVideo" src="Assets/video-notebooklm.mp4" controls preload="metadata" playsinline></video>
+                <a class="video-link" href="https://notebook.google.com/notebook/d1ea06a5-2d34-457f-b7c2-7164c7cf344c/artifact/89fb73fe-1c8a-459f-87ad-f775cddb3bbb?authuser=2&amp;pageId=none" target="_blank" rel="noopener">
+                    <div class="video-play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9z" fill="#fff"/></svg></div>
+                    <b>Reproducir video</b>
+                    <span>Se abre en NotebookLM</span>
+                </a>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:22px">
+                <div class="card card--accent reveal" style="--d:3"><h3 style="font-size:30px">Fuentes</h3><p style="font-size:22px;margin-top:8px">Los mismos documentos de esta conferencia.</p></div>
+                <div class="card card--accent reveal" style="--d:4"><h3 style="font-size:30px">Proceso</h3><p style="font-size:22px;margin-top:8px">NotebookLM generó guion, voz e imágenes.</p></div>
+                <div class="card card--hot reveal" style="--d:5"><h3 style="font-size:30px;color:var(--red)">Tiempo docente</h3><p style="font-size:22px;margin-top:8px">Minutos, no días. Tu criterio revisa el resultado.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <!-- ===========================================================
      L11 · ANATOMÍA DE UN PROMPT ACADÉMICO
@@ -1581,7 +1873,7 @@ html, body {
             <div class="term reveal" style="--d:3">
                 <div class="term-bar">
                     <i></i><i></i><i></i>
-                    <span class="mono" style="font-size:17px;color:#9CA3AF;margin-left:10px">gema-catedra-ufps.prompt</span>
+                    <span class="mono" style="font-size:17px;color:#9CA3AF;margin-left:10px">skill-catedra-ufps.prompt</span>
                     <button class="copy-btn" id="copyPrompt" type="button">COPIAR PROMPT</button>
                 </div>
                 <div class="term-body" id="promptText">
@@ -1618,6 +1910,12 @@ html, body {
             <span class="mono" style="color:rgba(255,255,255,.85);font-size:22px">Espacio abierto</span>
             <div style="font-size:66px;font-weight:800;line-height:1.05;margin-top:16px">¿Preguntas<br>o ideas?</div>
             <p style="font-size:26px;margin-top:24px;color:rgba(255,255,255,.9);line-height:1.4">Gracias por construir una Ingeniería Industrial 5.0 con sentido humano.</p>
+            <div class="close-qrs reveal" style="--d:3">
+                <div class="qr-tile"><svg class="qr-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" shape-rendering="crispEdges"><path stroke="#141518" d="M0 0.5h7m1 0h3m1 0h2m1 0h2m3 0h1m1 0h2m6 0h7M0 1.5h1m5 0h1m1 0h2m1 0h1m2 0h2m3 0h4m1 0h1m3 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h1m1 0h4m4 0h2m1 0h1m1 0h5m2 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m3 0h1m2 0h1m2 0h2m2 0h2m2 0h2m2 0h1m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h2m2 0h2m1 0h2m1 0h2m4 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m3 0h1m2 0h1m2 0h2m2 0h1m1 0h2m2 0h1m3 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M10 7.5h1m2 0h1m11 0h4M0 8.5h1m2 0h9m2 0h4m2 0h2m1 0h1m2 0h4m2 0h1m1 0h3M1 9.5h2m2 0h1m2 0h1m2 0h1m1 0h2m1 0h1m2 0h1m3 0h1m1 0h3m3 0h5M0 10.5h1m2 0h2m1 0h1m2 0h1m1 0h2m1 0h4m3 0h3m1 0h1m1 0h2m1 0h1m2 0h2m1 0h1M1 11.5h1m3 0h1m2 0h1m3 0h1m1 0h2m1 0h3m2 0h1m1 0h1m1 0h1m1 0h9M1 12.5h1m3 0h2m1 0h1m2 0h1m2 0h3m2 0h2m2 0h2m3 0h1m1 0h2m1 0h1m2 0h1M0 13.5h1m6 0h3m1 0h3m1 0h2m1 0h1m3 0h2m2 0h4m2 0h2m2 0h1M0 14.5h3m1 0h1m1 0h2m1 0h4m2 0h5m1 0h2m3 0h5m1 0h5M1 15.5h2m5 0h2m1 0h1m7 0h1m3 0h1m3 0h1m2 0h2m1 0h2m1 0h1M0 16.5h1m4 0h2m2 0h3m1 0h3m5 0h2m2 0h2m1 0h1m1 0h1m3 0h1m1 0h1M5 17.5h1m1 0h2m4 0h3m1 0h4m3 0h1m5 0h2m1 0h2M4 18.5h1m1 0h3m3 0h2m1 0h3m1 0h1m2 0h3m2 0h4m1 0h3m1 0h1M0 19.5h2m1 0h2m2 0h1m1 0h2m2 0h1m1 0h2m2 0h1m3 0h3m1 0h2m2 0h3m2 0h1M3 20.5h1m1 0h5m1 0h1m1 0h1m3 0h1m1 0h1m3 0h2m1 0h7m1 0h1M5 21.5h1m2 0h2m3 0h1m3 0h1m1 0h1m2 0h2m1 0h4m3 0h1m1 0h1m1 0h1M3 22.5h1m1 0h2m1 0h1m2 0h1m3 0h4m2 0h1m1 0h1m3 0h5m1 0h1m2 0h1M0 23.5h2m2 0h1m3 0h3m1 0h2m2 0h5m3 0h1m1 0h1m2 0h1m1 0h5M0 24.5h1m1 0h2m1 0h2m1 0h1m1 0h1m2 0h1m1 0h2m4 0h1m1 0h1m3 0h1m2 0h1m4 0h2M0 25.5h3m4 0h2m1 0h1m1 0h2m1 0h2m1 0h1m2 0h2m3 0h1m1 0h1m2 0h3M0 26.5h3m2 0h2m1 0h1m1 0h2m1 0h1m1 0h1m1 0h6m2 0h3m6 0h3M0 27.5h1m1 0h4m2 0h3m2 0h1m2 0h1m1 0h2m4 0h1m1 0h1m2 0h2m1 0h3m1 0h1M0 28.5h1m2 0h1m2 0h2m1 0h1m1 0h4m1 0h1m2 0h2m1 0h1m1 0h2m1 0h7m2 0h1M8 29.5h3m1 0h1m2 0h3m1 0h1m5 0h1m2 0h1m3 0h1m1 0h1m1 0h1M0 30.5h7m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1m1 0h2m3 0h1m1 0h1m1 0h1m3 0h1M0 31.5h1m5 0h1m1 0h3m2 0h1m1 0h2m2 0h1m3 0h1m1 0h4m3 0h1m2 0h2M0 32.5h1m1 0h3m1 0h1m1 0h3m2 0h1m2 0h2m1 0h2m2 0h2m1 0h7m2 0h1M0 33.5h1m1 0h3m1 0h1m1 0h1m1 0h2m3 0h1m3 0h2m1 0h1m6 0h2m3 0h3M0 34.5h1m1 0h3m1 0h1m2 0h3m2 0h2m2 0h1m3 0h3m7 0h3m1 0h1M0 35.5h1m5 0h1m5 0h1m1 0h4m1 0h2m1 0h2m2 0h2m4 0h5M0 36.5h7m1 0h1m1 0h3m1 0h3m1 0h1m1 0h1m2 0h2m1 0h4m1 0h1m2 0h1m1 0h1"/></svg>
+<b>Guía docente</b><span>Carpeta Drive</span></div>
+                <div class="qr-tile"><svg class="qr-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges"><path stroke="#141518" d="M0 0.5h7m1 0h1m3 0h2m2 0h5m2 0h1m2 0h7M0 1.5h1m5 0h1m1 0h1m2 0h3m4 0h1m1 0h4m2 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m3 0h2m3 0h3m2 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m1 0h1m2 0h1m2 0h3m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m2 0h6m2 0h1m2 0h2m2 0h1m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m4 0h2m1 0h1m2 0h1m1 0h2m1 0h1m1 0h1m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h2m7 0h3m2 0h2M0 8.5h1m1 0h2m1 0h3m2 0h1m3 0h1m1 0h3m2 0h1m4 0h1m2 0h1m1 0h2M1 9.5h1m1 0h3m1 0h2m2 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m2 0h2m1 0h2m1 0h1M1 10.5h1m1 0h1m2 0h1m7 0h1m1 0h2m2 0h1m1 0h2m1 0h5m2 0h1M0 11.5h2m2 0h2m2 0h1m1 0h6m2 0h1m1 0h1m1 0h3m2 0h1m1 0h1M3 12.5h2m1 0h1m1 0h1m2 0h2m5 0h2m2 0h2m1 0h1m1 0h3m1 0h1M0 13.5h2m1 0h1m1 0h1m2 0h1m4 0h1m2 0h1m1 0h4m4 0h1m3 0h2M0 14.5h1m1 0h2m2 0h2m1 0h1m3 0h1m1 0h7m2 0h1m1 0h1m2 0h1M0 15.5h1m1 0h2m1 0h1m2 0h3m2 0h2m1 0h1m2 0h1m1 0h1m2 0h3m1 0h3M1 16.5h3m2 0h1m1 0h2m1 0h1m2 0h2m2 0h1m1 0h4m1 0h2m1 0h3M1 17.5h2m1 0h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h2m2 0h1m1 0h2m1 0h2M1 18.5h1m3 0h2m2 0h2m3 0h2m1 0h1m2 0h3m4 0h2m1 0h2M0 19.5h1m1 0h3m2 0h1m2 0h4m1 0h2m3 0h1m1 0h1m1 0h2m2 0h1m2 0h1M0 20.5h2m1 0h4m1 0h2m1 0h1m3 0h1m2 0h1m1 0h2m3 0h1m3 0h2M0 21.5h1m1 0h2m6 0h1m2 0h1m1 0h1m1 0h4m1 0h1m2 0h2m5 0h1M2 22.5h3m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m2 0h1m1 0h4m1 0h2m1 0h2M1 23.5h1m2 0h1m2 0h1m1 0h6m1 0h1m1 0h3m3 0h1m1 0h1m1 0h2m1 0h1M0 24.5h1m2 0h4m2 0h3m2 0h2m1 0h2m3 0h1m1 0h5m2 0h1M8 25.5h1m4 0h5m1 0h1m1 0h1m2 0h1m3 0h2M0 26.5h7m1 0h1m1 0h1m2 0h2m4 0h1m1 0h4m1 0h1m1 0h1M0 27.5h1m5 0h1m1 0h1m1 0h1m2 0h3m4 0h2m1 0h2m3 0h3m1 0h1M0 28.5h1m1 0h3m1 0h1m3 0h4m1 0h1m1 0h1m2 0h2m1 0h6m1 0h1m1 0h1M0 29.5h1m1 0h3m1 0h1m1 0h1m1 0h1m6 0h2m1 0h1m1 0h3m2 0h1m1 0h1m2 0h1M0 30.5h1m1 0h3m1 0h1m1 0h3m1 0h1m4 0h1m2 0h8m1 0h2M0 31.5h1m5 0h1m6 0h6m3 0h3m1 0h3m3 0h1M0 32.5h7m1 0h3m2 0h6m2 0h1m4 0h1m1 0h3"/></svg>
+<b>LinkedIn</b><span>Conectemos</span></div>
+            </div>
         </div>
     </div>
 </section>
@@ -1908,7 +2206,7 @@ function setupGem() {
         const docs = [...btns].filter(b => b.classList.contains('loaded')).reduce((a, b) => a + +b.dataset.pct, 0);
         const seg = document.getElementById('ctxDocs');
         seg.style.width = docs + '%';
-        seg.textContent = docs ? `Documentos (${docs}%)` : '';
+        seg.textContent = docs ? `Fuentes (${docs}%)` : '';
         document.getElementById('ctxTotal').textContent = `${BASE + docs}% ocupada`;
         btns.forEach(b => (b.querySelector('.doc-status').textContent = b.classList.contains('loaded') ? 'CARGADO' : '+ CARGAR'));
     };
@@ -1938,6 +2236,16 @@ setupSlider();
 setupUml();
 setupGem();
 setupCopy();
+
+/* Video NotebookLM: usa el archivo local si existe; si no, queda el enlace */
+(function () {
+    const v = document.getElementById('nbVideo'), f = document.getElementById('nbVideoFrame');
+    if (!v) return;
+    v.addEventListener('loadedmetadata', () => f.classList.add('has-file'));
+    v.addEventListener('keydown', e => e.stopPropagation());
+    const sl = f.closest('.slide');
+    new MutationObserver(() => { if (!sl.classList.contains('active')) v.pause(); }).observe(sl, { attributes: true, attributeFilter: ['class'] });
+})();
 window.presentation = new SlidePresentation();
 </script>
 </body>
